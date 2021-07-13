@@ -7,6 +7,9 @@
     <div class="row">
 
         <form action="" name="registro" id="registroForm" method="POST" ><br>
+
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     {{ render_field(form.username , class='form-control' ) }}
