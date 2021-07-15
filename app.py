@@ -2,7 +2,7 @@ from flask import Flask, redirect,url_for,render_template,flash,request,make_res
 import forms
 from flask_wtf.csrf import CSRFProtect
 from config import DevelopmentConfig
-from models import db,User
+from models import db, User
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
