@@ -1,11 +1,11 @@
 from flask import Flask, redirect,url_for,render_template,flash,request,make_response,session
 import forms
 from flask_wtf.csrf import CSRFProtect
-from config import DevelopmentConfig
+from config import DevelopmentConfig_ionos, DevelopmentConfig_local
 from models import db, User
 
 app = Flask(__name__)
-app.config.from_object(DevelopmentConfig)
+app.config.from_object(DevelopmentConfig_local)
 csrf = CSRFProtect()
 
 @app.route('/')
@@ -25,6 +25,11 @@ def registro():
     titulo = 'Registro'
     registro_form  = forms.RegistroForm(request.form)
     if request.method  == 'POST' and registro_form.validate():
+        user = User(username = registro_form.username.data,
+                    password = registro_form.password.data,
+                    email = registro_form.email.data)
+        db.session.add(user)
+        db.session.commit()
         print (registro_form.username.data)
         print (registro_form.email.data)
         print (registro_form.password.data)
