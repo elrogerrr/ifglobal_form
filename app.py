@@ -1,11 +1,11 @@
 from flask import Flask, redirect,url_for,render_template,flash,request,make_response,session
 import forms
 from flask_wtf.csrf import CSRFProtect
-from config import DevelopmentConfig_ionos, DevelopmentConfig_local
+from config import DevelopmentConfig_ionos, DevelopmentConfig_local, DevelopmentConfig_sqlite
 from models import db, User
 
 app = Flask(__name__)
-app.config.from_object(DevelopmentConfig_local)
+app.config.from_object(DevelopmentConfig_sqlite)
 csrf = CSRFProtect()
 
 @app.route('/')
