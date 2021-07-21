@@ -25,11 +25,13 @@ def registro():
     titulo = 'Registro'
     registro_form  = forms.RegistroForm(request.form)
     if request.method  == 'POST' and registro_form.validate():
-        user = User(username = registro_form.username.data,
-                    password = registro_form.password.data,
-                    email = registro_form.email.data)
+        user = User(registro_form.username.data,
+                    registro_form.password.data,
+                    registro_form.email.data)
         db.session.add(user)
         db.session.commit()
+        success_message = 'Datos almacenados correctamente en base de datos !!!'
+        flash(success_message)
         print (registro_form.username.data)
         print (registro_form.email.data)
         print (registro_form.password.data)
