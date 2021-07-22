@@ -43,7 +43,8 @@ def registro():
     if request.method  == 'POST' and registro_form.validate():
         user = User(registro_form.username.data,
                     registro_form.email.data,
-                    registro_form.password.data)
+                    registro_form.password.data,
+                    registro_form.acepto.data)
         db.session.add(user)
         db.session.commit()
         success_message = 'Datos almacenados correctamente en base de datos !!!'

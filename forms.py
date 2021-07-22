@@ -1,4 +1,4 @@
-from wtforms import Form, StringField, PasswordField, TextField, TextAreaField, HiddenField
+from wtforms import Form, StringField, PasswordField, TextField, TextAreaField, HiddenField, BooleanField
 from wtforms.fields.html5 import EmailField
 from wtforms import validators
 
@@ -19,6 +19,7 @@ class RegistroForm(Form):
         validators.Length(min=8,max=25, message='Ingrese contraseña valida. !'),
         validators.Required()
         ])
+    acepto=BooleanField('',[validators.Required()])
     honeypot = HiddenField('',[length_honeypot])
 
 class LoginForm(Form):

@@ -22,12 +22,13 @@ render_field %}
       <div class="row control-group">
         <div class="form-group col-xs-12 floating-label-form-group controls">
           {{ render_field(form.password , class='form-control' )}}
+          <p>Acepto los terminos y comentarios</p>
         </div>
       </div>
-      <br />
+
       <div class="row control-group">
         <div class="form-group col-xs-12 floating-label-form-group controls">
-          <textarea name="texto" rows="6" style="width:100%">
+          <textarea name="texto" rows="6" style="width:100%; background-color: rgb(240, 240, 240);">
 What is Lorem Ipsum?
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                         
@@ -44,6 +45,14 @@ What is Lorem Ipsum?
                                         There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</textarea>
         </div>
       </div>
+
+
+      <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+          {{ form.acepto }}<span>  Acepto los terminos y condiciones </span>
+        </div>
+      </div>
+
       <br />
       {{ form.honeypot }}
       <div class="row">

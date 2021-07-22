@@ -10,12 +10,14 @@ class User(db.Model):
     username = db.Column(db.String(50), unique=True)
     email = db.Column(db.String(40))
     password = db.Column(db.String(102))
+    acepto=db.Column(db.Boolean)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
 
-    def __init__(self, username, email, password):
+    def __init__(self, username, email, password, acepto):
         self.username=username
         self.email=email
         self.password=self.__create_password(password)
+        self.acepto=acepto
         
     def __create_password(self,password):
         return generate_password_hash(password)
