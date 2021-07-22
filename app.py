@@ -24,9 +24,9 @@ def insession():
         print (email)
     return render_template('insession.html', titulo = titulo)
 
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('index.html', name=name)
+@app.route('/header')
+def header():
+    return render_template('index_header.html')
 
 
 @app.before_request
