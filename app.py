@@ -47,7 +47,7 @@ def registro():
                     registro_form.acepto.data)
         db.session.add(user)
         db.session.commit()
-        success_message = 'Datos almacenados correctamente en base de datos !!!'
+        success_message = 'Datos almacenados correctamente en base de datos. !!!'
         flash(success_message)
         print (registro_form.username.data)
         print (registro_form.email.data)
